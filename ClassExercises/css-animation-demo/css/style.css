@@ -1,0 +1,42 @@
+body {
+    animation-name: bgcolor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;*/
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+
+@keyframes stretching {
+    0%{
+        width: 100px;
+    }
+    100%{
+        width: 100%;
+    }
+    }
+
+@keyframes bgcolor {
+0%{
+    background-color:aqua;
+}
+50%{
+    background-color:blue;
+}
+100%{
+    background-color: blueviolet;
+}
+}
+
+.button{
+    display: inline-block;
+    background-color:rgb(41, 126, 96);
+    animation-name: stretching;
+    animation-duration: 5s;
+   /* animation-iteration-count: infinite;*/
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    height: 100%;
+}
+
