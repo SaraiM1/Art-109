@@ -1,0 +1,15 @@
+
+body {
+    margin: 0;
+}
+
+canvas {
+    
+}
+
+#scene-container{
+    background-color: blueviolet;
+    width: 80vw;
+    height:800px;
+    margin: 0 auto;
+}
