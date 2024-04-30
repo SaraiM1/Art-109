@@ -1,0 +1,35 @@
+h1 {
+    text-align: left;
+    text-decoration-line: underline;
+    color: cornsilk;
+}
+
+p {
+    text-align: left;
+    color: cornsilk;
+}
+
+pre {
+    text-align: left;
+    color: cornsilk;
+
+}
+
+body {
+    background-color: black;
+}
+
+
+
+canvas {
+position" absoulte;
+top: 0;
+left: 0;
+z-index: -1;
+
+}
+
+
+.play-button {
+    visibility: hidden;
+}
