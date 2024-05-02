@@ -6,7 +6,7 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.162.0/examples/jsm/loaders
 
 let scene, camera, renderer, sun, mixer;
 let sceneContainer = document.querySelector("#scene-container");
-let IsosphereAction;
+let IcosphereAction;
 
 function init () {
 
@@ -45,13 +45,22 @@ const loader = new GLTFLoader(); //loads 3d models
 loader.load('/assets/project3.color1.glb', function (gltf){
     sun = gltf.scene;
     scene.add(sun);
+    renderer.render(scene,camera)
     sun.scale.set(1,1,1);
     
-    mixer = new THREE.AnimationMixer(sun);
-    const clips = gltf.animations;
-    const clip = THREE.AnimationClip.findByName(clips, 'IcosphereAction');
-    const action = mixer.clipAction(IsosphereAction);
-    action.play();
+
+
+
+//--animation--//
+mixer = new THREE.AnimationMixer(sun);
+const clips = gltf.animations;
+const clip = THREE.AnimationClip.findByName(clips, 'IcosphereAction');
+const action = mixer.clipAction(IcosphereAction);
+action.play();
+
+
+
+    
 })
 
 
