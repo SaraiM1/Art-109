@@ -17,7 +17,9 @@ pre p {
 
 #textformat {
     text-align: left;
-
+    background-color: black;
+    color: white;
+    border-color: black;
 }
 
 #textalign {
@@ -55,5 +57,6 @@ pointer-events: none; */
 
 
 }
+
 
 
