@@ -14,14 +14,15 @@ function init () {
   //---setting up scene, camera and renderer---//
 scene = new THREE.Scene();
 
-// const light = new THREE.DirectionalLight(0xffffff, 5);
-// light.position.set(1,1,5);
-// scene.add(light);
+const light1 = new THREE.DirectionalLight(0xffffff, 3);
+light1.position.set(-1,-1,-5);
+scene.add(light1);
 
 
-const light = new THREE.DirectionalLight( 0xFFFFFF,5 );
-//light.position.set(1,1,5);
-scene.add( light );
+// const light = new THREE.DirectionalLight( 0xFFFFFF,3 );
+// light.position.set(1,5,1);
+// scene.add( light );
+
 
 // const helper = new THREE.DirectionalLightHelper( light, 3 );
 // scene.add( helper );
@@ -42,7 +43,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const loader = new GLTFLoader(); //loads 3d models
 
-loader.load('/assets/project3.color1.glb', function (gltf){
+loader.load('/assets/project3/project3.gltf', function (gltf){
     sun = gltf.scene;
     scene.add(sun);
     sun.scale.set(1,1,1);
@@ -62,7 +63,7 @@ loader.load('/assets/project3.color1.glb', function (gltf){
 
 //----position camera---//
 camera.position.z = 150;
- camera.position.x = 0;
+ camera.position.x = 1.5;
  camera.position.y = 0;
 
 console.log("IcosphereAction")
