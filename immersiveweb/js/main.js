@@ -43,7 +43,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const loader = new GLTFLoader(); //loads 3d models
 
-loader.load('/assets/project3/project3.gltf', function (gltf){
+loader.load('./assets/project3/project3.gltf', function (gltf){
     sun = gltf.scene;
     scene.add(sun);
     sun.scale.set(1,1,1);
