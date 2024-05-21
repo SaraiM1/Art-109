@@ -8,6 +8,7 @@ body {
     color: whitesmoke;
     margin: 1%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
 }
 
 pre p {
@@ -20,6 +21,8 @@ pre p {
     background-color: black;
     color: white;
     border-color: black;
+    line-height: 1.3;
+    font-size: 1.1em;
 }
 
 #textalign {
