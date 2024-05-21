@@ -32,7 +32,7 @@ scene.add(light1);
 
 
 
-camera = new THREE.PerspectiveCamera(13, sceneContainer.clientWidth / sceneContainer.clientHeight, .1, 1000);
+camera = new THREE.PerspectiveCamera(13, sceneContainer.clientWidth / sceneContainer.clientHeight, 1, 1000);
 
 renderer = new THREE.WebGLRenderer( {antialias: true, alpha: true} );
 renderer.setSize(sceneContainer.clientWidth, sceneContainer.clientHeight);
@@ -44,7 +44,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const loader = new GLTFLoader(); //loads 3d models
 
-loader.load('assets/project/project3lesslight.gltf', function (gltf){
+loader.load('assets/project/project3update.gltf', function (gltf){
     sun = gltf.scene;
     scene.add(sun);
     sun.scale.set(1,1,1);
