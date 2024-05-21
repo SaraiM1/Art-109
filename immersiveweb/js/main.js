@@ -6,7 +6,8 @@ import { GLTFLoader } from 'https://unpkg.com/three@0.162.0/examples/jsm/loaders
 
 let scene, camera, renderer, sun, mixer;
 let sceneContainer = document.querySelector("#scene-container");
-let IsosphereAction;
+let sunAction;
+
 
 function init () {
 
@@ -31,7 +32,7 @@ scene.add(light1);
 
 
 
-camera = new THREE.PerspectiveCamera(25, sceneContainer.clientWidth / sceneContainer.clientHeight, .1, 1000);
+camera = new THREE.PerspectiveCamera(13, sceneContainer.clientWidth / sceneContainer.clientHeight, .1, 1000);
 
 renderer = new THREE.WebGLRenderer( {antialias: true, alpha: true} );
 renderer.setSize(sceneContainer.clientWidth, sceneContainer.clientHeight);
@@ -43,16 +44,21 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 const loader = new GLTFLoader(); //loads 3d models
 
-loader.load('assets/project3/project3.gltf', function (gltf){
+loader.load('assets/project/project3lesslight.gltf', function (gltf){
     sun = gltf.scene;
     scene.add(sun);
     sun.scale.set(1,1,1);
-    
-    mixer = new THREE.AnimationMixer(sun);
-    const clips = gltf.animations;
-    const clip = THREE.AnimationClip.findByName(clips, 'IcosphereAction');
-    const action = mixer.clipAction(clip);
-    action.play();
+  
+   mixer = new THREE.AnimationMixer(sun);
+  const clips = gltf.animations;
+ const clip = THREE.AnimationClip.findByName(clips, 'sunAction');
+ const action = mixer.clipAction(clip);
+   action.play();
+
+  
+ 
+
+
 })
 
 
@@ -62,9 +68,9 @@ loader.load('assets/project3/project3.gltf', function (gltf){
 
 
 //----position camera---//
-camera.position.z = 150;
- camera.position.x = 1.5;
- camera.position.y = 0;
+camera.position.z = -150;
+ camera.position.x = 280;
+ camera.position.y = 50;
 
 console.log("IcosphereAction")
 }
@@ -93,4 +99,3 @@ window.addEventListener('resize', onWindowResize, false);
 
 init();
 animate();
-
